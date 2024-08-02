@@ -2,7 +2,10 @@ import CallToAction from "./components/CallToAction/CallToAction";
 import TopClients from "./components/clients/TopClients";
 import { testimonialData } from "./constants/constants";
 import { fetchServerData } from "./helperFunctions/fetchServerData";
+import Introduction from "./pageComponents/aboutUs/Introduction/Introduction";
 import WhatWeDo from "./pageComponents/aboutUs/what_we_do/WhatWeDo";
+import WhyChooseUs from "./pageComponents/aboutUs/why_choose_us/WhyChooseUs";
+import BlogList from "./pageComponents/home/blogs/BlogList";
 import TopFeature from "./pageComponents/home/Features/TopFeature";
 import Slider from "./pageComponents/home/Slider/Slider";
 import Testimonials from "./pageComponents/home/Testimonial/Testimonial";
@@ -20,6 +23,8 @@ export default async function indexPage() {
     "/home/top-products"
   );
 
+  const { data: blogs, error: newsError } = await fetchServerData("/blogs");
+
   if (sliderError || companyProfileError || productError)
     return "Sorry Something went wrong!!";
 
@@ -33,10 +38,12 @@ export default async function indexPage() {
       />
       <TopService service_data={topProducts} />
       <TopFeature />
+      <Introduction />
       <TopClients />
       <WhatWeDo />
       <CallToAction />
       <Testimonials data={testimonialData} />
+      <BlogList blog_data={blogs} />
     </div>
   );
 }

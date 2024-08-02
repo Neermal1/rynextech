@@ -53,7 +53,7 @@ const Footer = ({ footer_data }: IFooter) => {
   ];
 
   return (
-    <div className="bg-[#1e1e1e] text-[white]">
+    <div className="bg-primary text-[white]">
       <div className="layout px-6 py-10">
         <div className="grid lg:grid-cols-4 gap-20">
           <div className="flex flex-col gap-6">

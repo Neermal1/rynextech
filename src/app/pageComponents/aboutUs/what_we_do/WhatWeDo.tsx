@@ -1,3 +1,4 @@
+import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import { ourWork } from "@/app/constants/constants";
 import Image from "next/image";
 
@@ -9,10 +10,14 @@ const WhatWeDo = () => {
           <div className="flex flex-col items-center justify-center gap-4 text-center">
             <div>
               <div className="text-[16px] font-medium">What we do</div>
-              <div className="lg:text-[50px] text-[25px] font-bold text-black">
-                Branding, websites and digital experiences, crafted with
-                intelligence, love, precision and creativity.
-              </div>
+
+              <ComponentHeader
+                data={{
+                  heading:
+                    "Branding, websites and digital experiences, crafted with intelligence, love, precision and creativity.",
+                  subheading: "",
+                }}
+              />
             </div>
             <div>
               <div className="text-[16px] font-bold">Peter Bowman </div>
@@ -41,7 +46,7 @@ const WhatWeDo = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="h-[40%] text-center lg:w-[0.5%] flex items-center justify-center bg-gray-100"></div>
+                  <div className="h-[40%] text-center lg:w-[0.8%] flex items-center justify-center bg-gray-100"></div>
                 </div>
               );
             })}

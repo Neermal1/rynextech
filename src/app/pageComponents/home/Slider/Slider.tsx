@@ -26,11 +26,13 @@ const Slider = ({ slider_data }: ISlider) => {
               />
               <div className="absolute top-0 left-0 z-50 inset-0 flex flex-col lg:gap-10 gap-2 items-center justify-center   text-white my-20 lg:mt-0">
                 <div className="text-white text-center flex flex-col lg:gap-6 gap-4 z-50 ">
-                  <div className="text-[18px] lg:text-[50px] font-bold">
-                    BEST IN SEO AND WEB DESIGN
+                  <div className="flex items-center justify-center">
+                    <div className="text-[18px] lg:text-[50px] font-bold flex items-center justify-center  w-[60%]">
+                      Best IT Services Empowering Your Digital Success
+                    </div>
                   </div>
                   <div className="lg:text-[25px] text-[16px]">
-                    Creative SEO Solutions for Business
+                    Creative IT Solutions for Business
                   </div>
                 </div>
                 <div className="z-50">

@@ -120,3 +120,47 @@ export interface IPageHeader {
     subDetail: string;
   };
 }
+
+export interface IDefaultAntdContext {
+  openDrawer: boolean;
+  setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>;
+
+  loading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IGalleryList {
+  gallery_list_data: IGalleryListData[];
+}
+export interface IGalleryCollection {
+  galleryCollection: {
+    images: IGalleryListData[];
+  };
+}
+
+interface IGalleryListData {
+  id: number;
+  name: string;
+  slug: string;
+  image_link: string;
+}
+
+export interface IBlogs {
+  blog_data: IBlogData[];
+}
+
+export interface IBlogDetail {
+  blog_detail: {
+    detail: IBlogData;
+    others: IBlogData[];
+  };
+}
+
+interface IBlogData {
+  title: string;
+  slug: string;
+  description: string;
+  id: number;
+  image_link: string;
+  created_at: string;
+}

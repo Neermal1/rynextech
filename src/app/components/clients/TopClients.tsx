@@ -1,5 +1,6 @@
 import { clientCollection } from "@/app/constants/constants";
 import Image from "next/image";
+import ComponentHeader from "../componentHeader/ComponentHeader";
 
 const TopClients = () => {
   return (
@@ -8,8 +9,14 @@ const TopClients = () => {
         <div className="lg:col-span-4">
           <div>
             <div>JOIN OUR NETWORK</div>
-            <div className="lg:text-[50px] text-[35px] font-bold text-black">
-              Meet our top clients and partners
+
+            <div>
+              <ComponentHeader
+                data={{
+                  heading: "Meet our top clients and partners",
+                  subheading: "",
+                }}
+              />
             </div>
           </div>
         </div>

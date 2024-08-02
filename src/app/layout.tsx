@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import "./globals.css";
 import { fetchServerData } from "./helperFunctions/fetchServerData";
 import Footer from "./components/Footer/Footer";
+import AntdContextProvider from "./context/AntdContext";
 
 const public_sans = Poppins({
   subsets: ["latin"],
@@ -55,20 +56,22 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={public_sans.className}>
-        <Header
-          header_data={{
-            companyProfile,
-            headerItems,
-          }}
-        />
-        {children}
+        <AntdContextProvider>
+          <Header
+            header_data={{
+              companyProfile,
+              headerItems,
+            }}
+          />
+          {children}
 
-        <Footer
-          footer_data={{
-            companyProfile,
-            category,
-          }}
-        />
+          <Footer
+            footer_data={{
+              companyProfile,
+              category,
+            }}
+          />
+        </AntdContextProvider>
       </body>
     </html>
   );

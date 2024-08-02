@@ -1,6 +1,8 @@
 import CallToAction from "@/app/components/CallToAction/CallToAction";
 import PageHeader from "@/app/components/pageHeader/components/PageHeader";
 import WhatWeDo from "@/app/pageComponents/aboutUs/what_we_do/WhatWeDo";
+import WhyChooseUs from "@/app/pageComponents/aboutUs/why_choose_us/WhyChooseUs";
+import TopFeature from "@/app/pageComponents/home/Features/TopFeature";
 
 export default async function AboutUsPage() {
   return (
@@ -14,10 +16,11 @@ export default async function AboutUsPage() {
             title: "About Us",
           }}
         />
-        <div>
-          <WhatWeDo />
-          <CallToAction />
-        </div>
+        <WhatWeDo />
+        <WhyChooseUs />
+
+        <TopFeature />
+        <CallToAction />
       </div>
     </div>
   );
