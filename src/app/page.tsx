@@ -4,7 +4,6 @@ import { testimonialData } from "./constants/constants";
 import { fetchServerData } from "./helperFunctions/fetchServerData";
 import Introduction from "./pageComponents/aboutUs/Introduction/Introduction";
 import WhatWeDo from "./pageComponents/aboutUs/what_we_do/WhatWeDo";
-import WhyChooseUs from "./pageComponents/aboutUs/why_choose_us/WhyChooseUs";
 import BlogList from "./pageComponents/home/blogs/BlogList";
 import TopFeature from "./pageComponents/home/Features/TopFeature";
 import Slider from "./pageComponents/home/Slider/Slider";
@@ -36,8 +35,8 @@ export default async function indexPage() {
           companyProfile,
         }}
       />
-      <TopService service_data={topProducts} />
       <TopFeature />
+      <TopService service_data={topProducts} />
       <Introduction />
       <TopClients />
       <WhatWeDo />

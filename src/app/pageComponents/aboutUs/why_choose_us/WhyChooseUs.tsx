@@ -1,5 +1,7 @@
+"use client";
+import { intro_photo_animation } from "@/app/animation/animation_variants/animation_variants";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
-
+import { motion } from "framer-motion";
 const WhyChooseUs = () => {
   return (
     <div className="layout component-padding">
@@ -54,7 +56,12 @@ const WhyChooseUs = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:col-span-3 ">
+        <motion.div
+          initial="initial"
+          whileInView="whileInView"
+          variants={intro_photo_animation}
+          className=" lg:col-span-3 "
+        >
           <div className="overflow-hidden">
             <img
               src="https://img.freepik.com/free-photo/group-businesspeople-working-laptop-office_23-2147838544.jpg?t=st=1722585042~exp=1722588642~hmac=f0e3f32fd887d23f04248a2a54dd801ec256758cefa37fc27bf3a6f2cae33933&w=740"
@@ -62,7 +69,7 @@ const WhyChooseUs = () => {
               className=" transition-all duration-700 hover:scale-x-110 hover:object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

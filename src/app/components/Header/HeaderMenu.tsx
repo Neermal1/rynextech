@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { RxCaretDown } from "react-icons/rx";
 
 //antd
+import { IHeaderMenu } from "@/app/interface/interface";
 import { Popover } from "antd";
-import { IHeaderItem, IHeaderMenu } from "@/app/interface/interface";
 
 const HeaderMenu = ({ headerItems }: IHeaderMenu) => {
   const pathname = usePathname();
@@ -49,7 +49,7 @@ const HeaderMenu = ({ headerItems }: IHeaderMenu) => {
                 "text-white bg-secondary hover:cursor-pointer"
               }`}
             >
-              <div className="flex items-center hover:cursor-pointer uppercase  font-semibold">
+              <div className="flex items-center hover:cursor-pointer uppercase  font-semibold ">
                 <div>{data?.name}</div>
                 <div>
                   {data?.subMenu && (

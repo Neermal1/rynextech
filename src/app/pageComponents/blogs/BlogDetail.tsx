@@ -32,19 +32,25 @@ const BlogDetail = ({ blog_detail }: IBlogDetail) => {
           <div className="bg-white drop-shadow-md p-6 sticky top-[140px]">
             <div className="flex flex-col gap-6">
               <div className="text-secondary text-[22px]">Related Blogs</div>
-              <div className="flex flex-col gap-8">
+              <div className="grid lg:grid-cols-2 gap-10">
                 {blog_detail?.others?.map((blog_detail: any, index: number) => {
                   return (
-                    <Link href={`/blogs/${blog_detail?.slug}`} key={index}>
-                      <div className="flex items-center gap-4">
+                    <Link
+                      href={`/blogs/${blog_detail?.slug}`}
+                      key={index}
+                      className="group"
+                    >
+                      <div className="flex flex-col items-center gap-4">
                         <div>
                           <img
                             src={blog_detail?.image_link}
                             alt=""
-                            className="w-[10vh] object-cover rounded-[8px]"
+                            className=" object-cover rounded-[8px]"
                           />
                         </div>
-                        <div>{blog_detail?.title}</div>
+                        <div className="line-clamp-2 group-hover:text-primary text-[16px]">
+                          {blog_detail?.title}
+                        </div>
                       </div>
                     </Link>
                   );

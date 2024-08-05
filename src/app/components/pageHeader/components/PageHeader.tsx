@@ -1,4 +1,7 @@
+"use client";
+import { pageHeaderVariants } from "@/app/animation/animation_variants/animation_variants";
 import { IPageHeader } from "@/app/interface/interface";
+import { motion } from "framer-motion";
 
 const PageHeader = ({ data }: IPageHeader) => {
   return (
@@ -10,14 +13,19 @@ const PageHeader = ({ data }: IPageHeader) => {
     >
       <div className="absolute bg-gradient-to-l from-primary to-primary  opacity-80 3xl:opacity-70 w-full h-full top-0 left-0 right-0 bottom-0"></div>
 
-      <div className="relative flex flex-col items-center justify-center">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={pageHeaderVariants}
+        className="relative flex flex-col items-center justify-center"
+      >
         <div className="lg:text-[45px] text-center text-[35px] font-medium">
           {data?.title}
         </div>
         <div className="lg:w-[60%] text-center ">
           <div className="">{data?.subDetail}</div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

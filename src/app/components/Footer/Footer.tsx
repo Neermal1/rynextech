@@ -16,7 +16,7 @@ const Footer = ({ footer_data }: IFooter) => {
   const updated_category = category?.map((data) => {
     return {
       list: data?.name,
-      link: `/category/${data?.slug}`,
+      link: `/service/${data?.slug}`,
     };
   });
 

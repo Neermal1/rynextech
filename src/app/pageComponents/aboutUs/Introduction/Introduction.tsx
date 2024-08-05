@@ -1,5 +1,12 @@
+"use client";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import CompanyInfo from "../what_we_do/CompanyInfo";
+import StaggeredTextAnimation from "@/app/animation/reusable_animation/staggered_text_animation/StaggeredTextAnimation";
+import { motion } from "framer-motion";
+import {
+  intro_photo_animation,
+  top_animation,
+} from "@/app/animation/animation_variants/animation_variants";
 
 const Introduction = () => {
   return (
@@ -8,38 +15,34 @@ const Introduction = () => {
         <div className="lg:col-span-5">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2">
-              <div className="text-[18px] text-neutral">
-                WELCOME TO THE RYNEX
-              </div>
-
               <div className="lg:text-[35px] text-[30px] font-semibold  lg:w-[80%]">
                 <ComponentHeader
                   data={{
                     heading: "The Best IT Company for Advanced Tech Services",
-                    subheading: "",
+                    subheading: " WELCOME TO THE RYNEX",
                   }}
                 />
               </div>
             </div>
             <div className="flex flex-col gap-6 lg:w-[80%]">
               <div>
-                At Rynex Solutions, we are dedicated to revolutionizing the IT
+                <StaggeredTextAnimation
+                  text=" At Rynex Solutions, we are dedicated to revolutionizing the IT
                 landscape with innovative, reliable, and cutting-edge technology
                 solutions. As a premier IT company, we specialize in delivering
                 comprehensive services that drive efficiency, security, and
-                growth for businesses of all sizes.
-              </div>
-              <div>
-                Our extensive range of services includes everything from IT
-                consulting and managed services to cloud computing and
-                cybersecurity. By leveraging the latest advancements in
-                technology, we help businesses stay ahead of the competition and
-                navigate the complexities of the digital age
+                growth for businesses of all sizes."
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="lg:col-span-3">
+        <motion.div
+          initial="initial"
+          whileInView="whileInView"
+          variants={intro_photo_animation}
+          className="lg:col-span-3 "
+        >
           <div>
             <div className="  relative">
               <img
@@ -58,7 +61,7 @@ const Introduction = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div>
         <CompanyInfo />

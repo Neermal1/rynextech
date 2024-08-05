@@ -3,6 +3,11 @@ import { IGalleryCollection } from "@/app/interface/interface";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
+import {
+  parent_stagger_animation,
+  service_card_animation,
+} from "@/app/animation/animation_variants/animation_variants";
 
 const Gallery = ({ galleryCollection }: IGalleryCollection) => {
   const [open, setOpen] = useState(false);
@@ -20,10 +25,20 @@ const Gallery = ({ galleryCollection }: IGalleryCollection) => {
 
   return (
     <div className="layout component-padding">
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={parent_stagger_animation}
+        className="grid lg:grid-cols-3 grid-cols-1 gap-10"
+      >
         {galleryCollection?.images?.map((gallery, index: any) => {
           return (
-            <div key={gallery?.id}>
+            <motion.div
+              initial="initial"
+              variants={service_card_animation}
+              whileInView="whileInView"
+              key={gallery?.id}
+            >
               <div
                 onClick={() => handleImage(index)}
                 className="hover:cursor-pointer group overflow-hidden rounded-[8px]"
@@ -36,10 +51,10 @@ const Gallery = ({ galleryCollection }: IGalleryCollection) => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
       <Lightbox
         open={open}
         close={() => setOpen(false)}

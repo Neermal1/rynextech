@@ -1,6 +1,8 @@
+"use client";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import { ourWork } from "@/app/constants/constants";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const WhatWeDo = () => {
   return (
@@ -9,13 +11,11 @@ const WhatWeDo = () => {
         <div>
           <div className="flex flex-col items-center justify-center gap-4 text-center">
             <div>
-              <div className="text-[16px] font-medium">What we do</div>
-
               <ComponentHeader
                 data={{
                   heading:
                     "Branding, websites and digital experiences, crafted with intelligence, love, precision and creativity.",
-                  subheading: "",
+                  subheading: "What We Do",
                 }}
               />
             </div>
@@ -30,9 +30,20 @@ const WhatWeDo = () => {
           <div className="grid lg:grid-cols-4">
             {ourWork?.map((data, index) => {
               return (
-                <div
+                <motion.div
                   key={index}
                   className="flex items-center justify-center group"
+                  initial={{
+                    y: 100,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      delay: 0.1 * index,
+                      stiffness: 300,
+                    },
+                  }}
                 >
                   <div className="flex flex-col items-center justify-center gap-6 text-center p-6 group-hover:bg-secondary rounded-[8px] m-6">
                     <Image
@@ -47,7 +58,7 @@ const WhatWeDo = () => {
                     </div>
                   </div>
                   <div className="h-[40%] text-center lg:w-[0.8%] flex items-center justify-center bg-gray-100"></div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

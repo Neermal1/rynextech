@@ -164,3 +164,7 @@ interface IBlogData {
   image_link: string;
   created_at: string;
 }
+
+export interface IStaggeredTextAnimation {
+  text: string;
+}

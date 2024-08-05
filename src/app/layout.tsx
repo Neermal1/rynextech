@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Public_Sans } from "next/font/google";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import AntdContextProvider from "./context/AntdContext";
 import "./globals.css";
 import { fetchServerData } from "./helperFunctions/fetchServerData";
-import Footer from "./components/Footer/Footer";
-import AntdContextProvider from "./context/AntdContext";
 
-const public_sans = Poppins({
+const public_sans = Public_Sans({
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
@@ -39,9 +39,9 @@ export default async function RootLayout({
       slug: "/gallery",
     },
     {
-      name: "Products",
+      name: "Service",
       subMenu: category,
-      slug: "/category",
+      slug: "/service",
     },
     {
       name: "Blogs",
