@@ -1,11 +1,13 @@
 import CallToAction from "./components/CallToAction/CallToAction";
 import TopClients from "./components/clients/TopClients";
+import Technology from "./components/Technology/Technology";
 import { testimonialData } from "./constants/constants";
 import { fetchServerData } from "./helperFunctions/fetchServerData";
 import Introduction from "./pageComponents/aboutUs/Introduction/Introduction";
 import WhatWeDo from "./pageComponents/aboutUs/what_we_do/WhatWeDo";
 import BlogList from "./pageComponents/home/blogs/BlogList";
 import TopFeature from "./pageComponents/home/Features/TopFeature";
+import SoftwareLifeCycle from "./pageComponents/home/lifeCycle/SoftwareLifeCycle";
 import Slider from "./pageComponents/home/Slider/Slider";
 import Testimonials from "./pageComponents/home/Testimonial/Testimonial";
 import TopService from "./pageComponents/service/home/TopService";
@@ -36,7 +38,9 @@ export default async function indexPage() {
         }}
       />
       <TopFeature />
+      <SoftwareLifeCycle />
       <TopService service_data={topProducts} />
+      <Technology />
       <Introduction />
       <TopClients />
       <WhatWeDo />

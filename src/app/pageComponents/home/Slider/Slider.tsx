@@ -28,7 +28,7 @@ const Slider = ({ slider_data }: ISlider) => {
                 // src={data?.image_link}
                 src={`/staticImages/sliderbanner.png`}
                 alt="slider_image"
-                className="w-full h-full w-full object-cover bg-center"
+                className="w-full h-full  object-cover bg-center"
               />
               <div className="absolute top-0 left-0 z-50 inset-0 flex flex-col lg:gap-10 gap-2 items-center justify-center text-white my-20 lg:mt-0">
                 <motion.div

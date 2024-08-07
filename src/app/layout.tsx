@@ -35,22 +35,18 @@ export default async function RootLayout({
       slug: "/about-us",
     },
     {
-      name: "Our Gallery",
-      slug: "/gallery",
-    },
-    {
       name: "Service",
       subMenu: category,
       slug: "/service",
     },
     {
-      name: "Blogs",
-      slug: "/blogs",
+      name: "Our Gallery",
+      slug: "/gallery",
     },
 
     {
-      name: "Contact Us",
-      slug: "/contact-us",
+      name: "Blogs",
+      slug: "/blogs",
     },
   ];
   return (

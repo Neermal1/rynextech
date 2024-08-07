@@ -6,6 +6,8 @@ import { FaFacebookF, FaPhoneAlt } from "react-icons/fa";
 import { FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
 import { IoLocationSharp, IoLogoYoutube, IoMailSharp } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { motion } from "framer-motion";
+import { text_animation } from "@/app/animation/animation_variants/animation_variants";
 
 const iconStyle =
   "text-secondary border-[1px] border-secondary p-2 hover:bg-primary hover:border-primary hover:text-[white] transition-all duration-700 hover:cursor-pointer";
@@ -53,8 +55,8 @@ const Footer = ({ footer_data }: IFooter) => {
   ];
 
   return (
-    <div className="bg-primary text-[white]">
-      <div className="layout px-6 py-10">
+    <div className="bg-white border-t-2 border-secondary text-black">
+      <div className="layout lg:px-4 px-6 py-10 ">
         <div className="grid lg:grid-cols-4 gap-20">
           <div className="flex flex-col gap-6">
             <div className="w-[100%]">
@@ -64,7 +66,7 @@ const Footer = ({ footer_data }: IFooter) => {
               </div>
             </div>
             <div
-              className="text-white text-[16px] text-justify"
+              className="text-black text-[16px] text-justify"
               dangerouslySetInnerHTML={{
                 __html: companyProfile?.footer_text,
               }}
@@ -125,12 +127,17 @@ const Footer = ({ footer_data }: IFooter) => {
                         key={index}
                         className="flex flex-col gap-4"
                       >
-                        <div className="text-white flex items-center gap-1 f">
+                        <motion.div
+                          variants={text_animation}
+                          initial="initial"
+                          whileHover="whileHover"
+                          className="text-black  flex items-center gap-1 "
+                        >
                           <div>
                             <MdKeyboardArrowRight size={12} />
                           </div>
                           <div>{data?.list}</div>
-                        </div>
+                        </motion.div>
                       </Link>
                     );
                   })}
@@ -138,39 +145,56 @@ const Footer = ({ footer_data }: IFooter) => {
               </div>
             );
           })}
-          <div className="flex flex-col gap-6">
+          <motion.div className="flex flex-col gap-6">
             <div>CONTACT US</div>
-            <div className="text-white flex flex-col gap-4">
-              <div className="flex items-center gap-1">
+            <div className="text-black flex flex-col gap-4">
+              <motion.div
+                initial="initial"
+                whileHover="whileHover"
+                variants={text_animation}
+                className="flex items-center gap-1"
+              >
                 <div>
                   <IoLocationSharp size={18} />
                 </div>
                 <div>{companyProfile?.company_address}</div>
-              </div>
-              <a
-                href={`tel:${companyProfile?.company_email}`}
-                className="flex items-center gap-1"
+              </motion.div>
+              <motion.div
+                initial="initial"
+                whileHover="whileHover"
+                variants={text_animation}
               >
-                <div>
-                  <FaPhoneAlt size={18} />
-                </div>
-                <div>{companyProfile?.company_phone}</div>
-              </a>
-              <a
-                href={`mailto:${companyProfile?.company_email}`}
-                className="flex items-center gap-1"
+                <a
+                  href={`tel:${companyProfile?.company_email}`}
+                  className="flex items-center gap-1"
+                >
+                  <div>
+                    <FaPhoneAlt size={18} />
+                  </div>
+                  <div>{companyProfile?.company_phone}</div>
+                </a>
+              </motion.div>
+              <motion.div
+                initial="initial"
+                whileHover="whileHover"
+                variants={text_animation}
               >
-                <div>
-                  <IoMailSharp size={18} />
-                </div>
-                <div>{companyProfile?.company_email}</div>
-              </a>
+                <a
+                  href={`mailto:${companyProfile?.company_email}`}
+                  className="flex items-center gap-1"
+                >
+                  <div>
+                    <IoMailSharp size={18} />
+                  </div>
+                  <div>{companyProfile?.company_email}</div>
+                </a>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="border-t-[1px] border-t-[gray]">
-        <div className="layout px-6 py-6 text-white flex lg:flex-row flex-col  gap-4 items-center lg:justify-between justify-center">
+        <div className="layout px-6 py-6 text-black flex lg:flex-row flex-col  gap-4 items-center lg:justify-between justify-center">
           <div className="lg:text-start text-center">
             Copyright © <span className="">export.com.</span> All Rights
             Reserved.

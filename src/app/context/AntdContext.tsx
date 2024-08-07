@@ -16,8 +16,7 @@ export const AntdContext = createContext<IDefaultAntdContext>(defaultValue);
 
 const AntdContextProvider = ({ children }: any) => {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-  const [openLogOutModal, setLogoutModal] = useState<boolean>(false);
-  const [openEnquiryModal, setEnquiryModal] = useState<boolean>(false);
+
   const [loading, setIsLoading] = useState<boolean>(false);
 
   return (

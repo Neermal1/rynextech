@@ -51,8 +51,7 @@ const TopFeature = () => {
       >
         <motion.div
           // variants={left_animation}
-          variants={left_animation(isMobile)}
-          viewport={{ once: true }}
+          // variants={left_animation(isMobile)}
           className="lg:col-span-5  rounded-md"
         >
           <div className="relative">
@@ -60,8 +59,7 @@ const TopFeature = () => {
           </div>
         </motion.div>
         <motion.div
-          variants={right_animation(isMobile)}
-          viewport={{ once: true }}
+          // variants={right_animation(isMobile)}
           className="lg:col-span-7 flex flex-col gap-10"
         >
           <div className="flex flex-col gap-4">

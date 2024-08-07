@@ -14,9 +14,11 @@ import { IHeader } from "@/app/interface/interface";
 import Ribbonbar from "./RibbonBar";
 import HeaderMenu from "./HeaderMenu";
 import SmallScreenHeader from "./SmallScreenHeader";
+import PrimaryButton from "../Button/PrimaryButton";
+import { AntdContext } from "@/app/context/AntdContext";
 
 const Header = ({ header_data }: IHeader) => {
-  //   const { setOpenDrawer } = useContext(AntdContext);
+  const { setOpenDrawer } = useContext(AntdContext);
 
   //   const { customer_name } = useContext(CustomerInfoContext);
 
@@ -28,7 +30,7 @@ const Header = ({ header_data }: IHeader) => {
       <div className="sticky top-0 z-50">
         <div className="">
           <div className="bg-white   drop-shadow-md text-black ">
-            <div className="layout  lg:px-4  px-6 lg:py-0 py-4 lg:items-stretch items-center flex lg:gap-6 gap-20  justify-between ">
+            <div className="layout   lg:px-4  px-6 lg:py-0 py-4 lg:items-stretch items-center flex lg:gap-6 gap-20  justify-between ">
               <Link href="/" className="flex items-center my-4">
                 {/* <img
                   src={companyProfile?.logo_link}
@@ -39,15 +41,21 @@ const Header = ({ header_data }: IHeader) => {
                   Rynex <span className="text-secondary">Solutions</span>
                 </div>
               </Link>
-              <div className="lg:flex gap-6 hidden">
+              <div className="lg:flex gap-6 hidden ">
                 <HeaderMenu headerItems={headerItems} />
               </div>
+              <Link
+                href="/contact-us"
+                className="hidden lg:flex items-center justify-center "
+              >
+                <PrimaryButton>Contact Us</PrimaryButton>
+              </Link>
 
               <div className="lg:hidden flex items-center gap-4">
                 <div
-                //   onClick={() => {
-                //     setOpenDrawer(true);
-                //   }}
+                  onClick={() => {
+                    setOpenDrawer(true);
+                  }}
                 >
                   <IoIosMenu size={30} />
                 </div>

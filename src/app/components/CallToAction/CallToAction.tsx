@@ -8,7 +8,7 @@ import {
 } from "@/app/animation/animation_variants/animation_variants";
 const CallToAction = () => {
   return (
-    <div className="bg-accent">
+    <div className="bg-lightAccent">
       <div className="layout component-padding">
         <div className="grid lg:grid-cols-2">
           <div>

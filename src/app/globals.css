@@ -9,3 +9,52 @@
 .component-padding {
   @apply lg:py-[100px] py-[75px] lg:px-4 px-6;
 }
+
+.ant-popover .ant-popover-inner {
+  @apply lg:w-[210vh];
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.ant-popover-inner-content a {
+  @apply text-black;
+}
+/* //tech-animation */
+.marquee {
+  height: 100px;
+  width: full;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-inner {
+  display: flex;
+  width: 200%;
+  margin: 0;
+  padding: -20px;
+  position: absolute;
+  animation: marquee 20s linear infinite;
+}
+
+.clients {
+  flex: 0 0 5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients img {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

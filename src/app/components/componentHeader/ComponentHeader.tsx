@@ -13,7 +13,7 @@ const ComponentHeader = ({ data }: IComponentHeader) => {
       className=" flex flex-col "
     >
       <motion.div className="lg:text-[18px]  text-neutral text-[14px] font-medium">
-        {data?.subheading}
+        {data?.subheading?.toUpperCase()}
       </motion.div>
       <motion.div className="relative">
         <div className="lg:text-[38px] text-[25px] font-semibold">

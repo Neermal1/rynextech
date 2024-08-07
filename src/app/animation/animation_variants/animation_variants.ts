@@ -80,6 +80,8 @@ export const top_animation: any = {
     transition: {
       delay: 0,
       duration: 0.5,
+      type: "spring",
+      stiffness: "300",
     },
   },
 };
@@ -132,6 +134,19 @@ export const intro_photo_animation: any = {
   },
   whileInView: {
     y: 0,
+    transition: {
+      delay: 0.1,
+      duration: 0.8,
+      type: "spring",
+      stiffness: 300,
+    },
+  },
+};
+
+export const text_animation: any = {
+  whileHover: {
+    scale: 1.1,
+    originX: 0,
     transition: {
       delay: 0.1,
       duration: 0.8,

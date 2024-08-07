@@ -168,3 +168,11 @@ interface IBlogData {
 export interface IStaggeredTextAnimation {
   text: string;
 }
+
+export interface IServiceCard {
+  data: {
+    title: string;
+    desc: string;
+    count?: any;
+  };
+}
