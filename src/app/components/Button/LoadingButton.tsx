@@ -12,7 +12,7 @@ const LoadingButton = ({ children }: IButton) => {
       htmlType="submit"
       loading={loading}
       style={{
-        backgroundColor: "#00D563",
+        backgroundColor: "#BB031D",
         color: "white",
         fontSize: "20px",
       }}
