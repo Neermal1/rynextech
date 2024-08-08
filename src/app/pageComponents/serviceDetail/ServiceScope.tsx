@@ -60,14 +60,14 @@ const ServiceScope = () => {
           </motion.div>
           <div className="text-neutral">
             At Rynex, we know that every detail of the development process is
-            crucial, and so we’ve built the expertise to provide a full range of
-            mobile application development services. We can be responsible for
-            design, coding, management, or integration, but we can also develop
-            your product from scratch into a fully functioning application.
-            Regardless if you're a start-up or a big enterprise, we'll adjust to
-            your needs and create a beautiful digital product that meets your
-            expectations. Here are some of the mobile application development
-            services that we offer:
+            crucial, and so {`we’ve`} built the expertise to provide a full
+            range of mobile application development services. We can be
+            responsible for design, coding, management, or integration, but we
+            can also develop your product from scratch into a fully functioning
+            application. Regardless if {`you're`} a start-up or a big
+            enterprise, {`we'll`} adjust to your needs and create a beautiful
+            digital product that meets your expectations. Here are some of the
+            mobile application development services that we offer:
           </div>
           <div className="flex flex-col gap-6">
             {service_scope_list?.map((data, index) => {

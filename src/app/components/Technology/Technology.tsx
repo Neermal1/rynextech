@@ -61,13 +61,15 @@ const Technology = () => {
 
   return (
     <div className="flex flex-col gap-20 layout component-padding">
-      <div className="">
-        <ComponentHeader
-          data={{
-            heading: "Technologies We Use",
-            subheading: "",
-          }}
-        />
+      <div className="flex items-center justify-center text-center">
+        <div className="lg:w-[60%]">
+          <ComponentHeader
+            data={{
+              heading: "Technologies We Use",
+              subheading: "",
+            }}
+          />
+        </div>
       </div>
       <div className=" py-4">
         <div className="marquee">
