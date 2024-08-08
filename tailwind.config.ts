@@ -18,7 +18,7 @@ const config: Config = {
         secondary: "#BB031D",
         black: "#111111",
         hover: "#ff2342",
-        accent: "#edfff5",
+        accent: "#fff0f2",
         lightAccent: "#F2F5F7",
         neutral: "#9ca3af",
       },

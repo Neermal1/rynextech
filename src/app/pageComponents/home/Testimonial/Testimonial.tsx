@@ -53,7 +53,7 @@ export default function Testimonials({ data }: ITestimonial) {
                       />
                     </div>
                     <div className="mt-4">
-                      <p className="text-gray-700 lg:text-lg mb-2 lg:mb-4 italic lg:h-[10vh]">
+                      <p className="text-gray-700 lg:text-lg mb-2 lg:mb-4 italic h-[15vh] overflow-y-scroll">
                         &quot;{testimonial?.description}&quot;
                       </p>
                       <div className="">

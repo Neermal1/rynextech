@@ -93,7 +93,7 @@ const ServiceScope = () => {
                   key={index}
                 >
                   <div className="flex lg:items-center gap-1 ">
-                    <div className="translate-y-1">
+                    <div className="translate-y-1 lg:translate-y-[-1px]">
                       <GoDotFill className="text-secondary" />
                     </div>
                     <div className="text-[18px] font-medium">{data?.title}</div>

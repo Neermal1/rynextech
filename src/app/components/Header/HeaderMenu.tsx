@@ -79,7 +79,7 @@ const HeaderMenu = ({ headerItems }: IHeaderMenu) => {
               className={`lg:hover:border-secondary hover:border-b-[2px]  text-black flex px-2 items-center justify-center hover:cursor-pointer ${
                 (pathname === data?.slug ||
                   pathname.startsWith(data?.slug + "/")) &&
-                "text-black lg:border-b-[2px] lg:border-secondary  hover:cursor-pointer"
+                "text-black lg:border-b-[3px] lg:border-secondary  hover:cursor-pointer"
               }`}
             >
               <div
