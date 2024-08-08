@@ -1,5 +1,6 @@
 import CallToAction from "@/app/components/CallToAction/CallToAction";
 import PageHeader from "@/app/components/pageHeader/components/PageHeader";
+import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
 import ServiceDevelopmentSteps from "@/app/pageComponents/serviceDetail/ServiceDevelopmentSteps";
 import ServiceIntro from "@/app/pageComponents/serviceDetail/ServiceIntro";
 import ServicePlatforms from "@/app/pageComponents/serviceDetail/ServicePlatforms";
@@ -18,6 +19,7 @@ export default async function ServiceDetailPage() {
             "We help companies leverage technological capabilities by developing cutting-edge mobile applications with excellent UX (User Experience) across multiple platforms including Android and iOS and mobile devices.",
         }}
       />
+
       <ServiceIntro />
       <ServiceValue />
       <ServiceScope />

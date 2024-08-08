@@ -21,7 +21,7 @@ const ComponentHeader = ({ data }: IComponentHeader) => {
             if (array.length === 2 && index === array.length - 1) {
               return (
                 <span key={index} className="text-secondary">
-                  {word}{" "}
+                  {word}
                 </span>
               );
             } else if (array.length === 3 && index >= array.length - 2) {

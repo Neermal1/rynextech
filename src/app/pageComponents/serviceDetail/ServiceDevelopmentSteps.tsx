@@ -36,7 +36,7 @@ const ServiceDevelopmentSteps = () => {
       </div>
       <div className="grid lg:grid-cols-8 gap-20">
         <div className="bg-white drop-shadow-md p-6 rounded-md lg:col-span-3">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             {development_steps?.map((data, index) => {
               return (
                 <motion.div

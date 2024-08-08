@@ -3,6 +3,7 @@ import {
   intro_photo_animation,
   top_animation,
 } from "@/app/animation/animation_variants/animation_variants";
+import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
 import { motion } from "framer-motion";
 import { GoDotFill } from "react-icons/go";
 const ServiceScope = () => {
@@ -56,7 +57,7 @@ const ServiceScope = () => {
             whileInView="whileInView"
             className="lg:text-[30px] text-[20px] font-medium"
           >
-            Our scope of mobile app development services
+            <TextSplitColor text=" Our scope of mobile app development services" />
           </motion.div>
           <div className="text-neutral">
             At Rynex, we know that every detail of the development process is
@@ -91,8 +92,8 @@ const ServiceScope = () => {
                   }}
                   key={index}
                 >
-                  <div className="flex items-center gap-1">
-                    <div>
+                  <div className="flex lg:items-center gap-1 ">
+                    <div className="translate-y-1">
                       <GoDotFill className="text-secondary" />
                     </div>
                     <div className="text-[18px] font-medium">{data?.title}</div>

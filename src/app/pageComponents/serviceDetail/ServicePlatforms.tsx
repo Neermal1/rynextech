@@ -1,5 +1,6 @@
 "use client";
 import { top_animation } from "@/app/animation/animation_variants/animation_variants";
+import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
 import { motion } from "framer-motion";
 import { CiMobile3 } from "react-icons/ci";
 
@@ -37,7 +38,7 @@ const ServicePlatforms = () => {
             className="flex items-center justify-center flex-col gap-4 lg:w-[60%] text-center"
           >
             <div className="lg:text-[30px] text-[25px] font-bold">
-              MOBILE APPLICATION DEVELOPMENT SERVICES FOR VARIOUS PLATFORMS
+              <TextSplitColor text=" MOBILE APPLICATION DEVELOPMENT SERVICES FOR VARIOUS PLATFORMS" />
             </div>
             <div>
               Our mobile app developers have over a decade-long expertise in

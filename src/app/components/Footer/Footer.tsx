@@ -61,9 +61,14 @@ const Footer = ({ footer_data }: IFooter) => {
           <div className="flex flex-col gap-6">
             <div className="w-[100%]">
               {/* <img src={companyProfile?.logo_link} alt="" className="w-[8vh]" /> */}
-              <div className=" font-semibold lg:text-[30px] text-[20px] ">
+              {/* <div className=" font-semibold lg:text-[30px] text-[20px] ">
                 Rynex <span className="text-secondary">Solutions</span>
-              </div>
+              </div> */}
+              <img
+                src="/staticImages/logo.jpg"
+                alt=""
+                className="lg:w-[14vh] w-[10vh] object-contain"
+              />
             </div>
             <div
               className="text-black text-[16px] text-justify"

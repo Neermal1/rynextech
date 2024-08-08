@@ -1,6 +1,7 @@
 "use client";
 import { RiExpandDiagonal2Line } from "react-icons/ri";
 import { motion } from "framer-motion";
+import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
 
 const ServiceValue = () => {
   const serviceValueList = [
@@ -34,8 +35,10 @@ const ServiceValue = () => {
       <div className="layout component-padding flex flex-col gap-20">
         <div className="grid lg:grid-cols-2 gap-20">
           <div className="text-[30px] font-medium">
-            Mobile app solutions that deliver value to customers and elevate
-            your brand
+            <TextSplitColor
+              text=" Mobile app solutions that deliver value to customers and elevate
+            your brand"
+            />
           </div>
           <div className="text-[18px]">
             Enjoy the benefits of owning a mobile application! Be relevant and

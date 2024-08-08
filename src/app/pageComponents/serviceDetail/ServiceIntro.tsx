@@ -6,6 +6,7 @@ import {
   top_animation,
 } from "@/app/animation/animation_variants/animation_variants";
 import StaggeredTextAnimation from "@/app/animation/reusable_animation/staggered_text_animation/StaggeredTextAnimation";
+import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
 
 const ServiceIntro = () => {
   return (
@@ -17,7 +18,7 @@ const ServiceIntro = () => {
           whileInView="whileInView"
           className="lg:text-[30px] text-[20px] font-semibold"
         >
-          Mobile App Development Services
+          <TextSplitColor text="Mobile App Development Services" />
         </motion.div>
         <div className="text-neutral text-[18px] lg:w-[60%]">
           <StaggeredTextAnimation

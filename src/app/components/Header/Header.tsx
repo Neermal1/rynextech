@@ -37,8 +37,13 @@ const Header = ({ header_data }: IHeader) => {
                   alt=""
                   className="lg:w-[10vh] w-[6vh] object-contain "
                 /> */}
-                <div className=" font-semibold lg:text-[30px] text-[20px] ">
-                  Rynex <span className="text-secondary">Solutions</span>
+
+                <div>
+                  <img
+                    src="/staticImages/logo.jpg"
+                    alt=""
+                    className="lg:w-[14vh] w-[10vh] object-contain"
+                  />
                 </div>
               </Link>
               <div className="lg:flex gap-6 hidden ">

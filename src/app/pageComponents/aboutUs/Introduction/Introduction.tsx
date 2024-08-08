@@ -45,12 +45,9 @@ const Introduction = () => {
         >
           <div>
             <div className="  relative">
-              <img
-                src="https://themeforest.kreativdev.com/pachin/assets/images/about-thumb-2.jpg"
-                alt=""
-                className="h-[50vh] w-full object-cover z-0 rounded-[8px]"
-              />
-              <div className="absolute lg:top-[60px] top-[95px] lg:right-[-80px] right-[-10px] lg:bottom-[-50px]  w-full z-40">
+              <div className="h-[50vh] bg-hover w-full object-cover z-0 rounded-[8px]"></div>
+
+              <div className="absolute lg:top-[60px] top-[50px] lg:right-[-80px] right-[-10px] lg:bottom-[-50px]  w-full z-40">
                 <div className="bg-white   p-1 rounded-[8px] drop-shadow-md flex items-center justify-center">
                   <img
                     src="https://imageio.forbes.com/specials-images/imageserve/60bfd4cc39671e95929b0781/Handsome-businessman-sitting-in-modern-office-/960x0.jpg?height=473&width=711&fit=bounds"
