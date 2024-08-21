@@ -1,7 +1,7 @@
-import { clientCollection } from "@/app/constants/constants";
+import { IClient } from "@/app/interface/interface";
 import ComponentHeader from "../componentHeader/ComponentHeader";
 
-const TopClients = () => {
+const TopClients = ({ client_data }: IClient) => {
   return (
     <div className="layout component-padding flex flex-col gap-6">
       <div className="grid lg:grid-cols-8 lg:gap-20 gap-10">
@@ -31,13 +31,13 @@ const TopClients = () => {
         </div>
       </div>
       <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 ">
-        {clientCollection?.map((data, index) => {
+        {client_data?.map((data, index) => {
           return (
             <div key={index} className="">
               <img
-                src={data?.img_link}
+                src={data?.image_link}
                 alt=""
-                className=" h-[150px] opacity-60"
+                className=" h-[70px] object-contain"
               />
             </div>
           );

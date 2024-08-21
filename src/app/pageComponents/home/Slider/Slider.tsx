@@ -25,7 +25,6 @@ const Slider = ({ slider_data }: ISlider) => {
           return (
             <div key={data?.id} className="relative">
               <img
-                // src={data?.image_link}
                 src={`/staticImages/sliderbanner.png`}
                 alt="slider_image"
                 className="w-full h-full  object-cover bg-center"

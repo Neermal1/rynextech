@@ -1,32 +1,14 @@
 "use client";
-import {
-  left_animation,
-  right_animation,
-} from "@/app/animation/animation_variants/animation_variants";
 import PrimaryButton from "@/app/components/Button/PrimaryButton";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
-import { topFeatureList } from "@/app/constants/constants";
+import { ITopFeature } from "@/app/interface/interface";
 import { motion } from "framer-motion";
 import Lottie from "lottie-web";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import feature from "../../../../../public/animation/json/features_json.json";
 
-const TopFeature = () => {
+const TopFeature = ({ feature_data }: ITopFeature) => {
   const featureReference: any = useRef(null);
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" && window.innerWidth <= 768
-  );
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () =>
-        setIsMobile(window !== undefined && window.innerWidth <= 768);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
-  console.log("This is ismobile", isMobile);
 
   useEffect(() => {
     const animation = Lottie.loadAnimation({
@@ -79,9 +61,9 @@ const TopFeature = () => {
             </div>
           </div>
           <div className="flex flex-col gap-10">
-            {topFeatureList?.map((data, index) => {
+            {feature_data?.map((data, index) => {
               return (
-                <div key={index}>
+                <div key={data?.id}>
                   <motion.div
                     initial={{
                       y: 10,
@@ -92,7 +74,7 @@ const TopFeature = () => {
                       opacity: 1,
 
                       transition: {
-                        delay: 0.4 * index,
+                        delay: 0.4 * data?.id,
                         duration: 0.8,
                         staggerChildren: 0.8,
                         type: "spring",
@@ -106,7 +88,7 @@ const TopFeature = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                       <div className="lg:text-[22px] text-[20px] font-bold">
-                        {data?.feature}
+                        {data?.title}
                       </div>
                       <div className="text-gray-600 opacity-50">
                         {data?.description}

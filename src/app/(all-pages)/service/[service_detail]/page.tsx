@@ -1,13 +1,19 @@
 import CallToAction from "@/app/components/CallToAction/CallToAction";
 import PageHeader from "@/app/components/pageHeader/components/PageHeader";
-import TextSplitColor from "@/app/helperFunctions/TextSplitColor";
+import { fetchServerData } from "@/app/helperFunctions/fetchServerData";
 import ServiceDevelopmentSteps from "@/app/pageComponents/serviceDetail/ServiceDevelopmentSteps";
 import ServiceIntro from "@/app/pageComponents/serviceDetail/ServiceIntro";
 import ServicePlatforms from "@/app/pageComponents/serviceDetail/ServicePlatforms";
 import ServiceScope from "@/app/pageComponents/serviceDetail/ServiceScope";
 import ServiceValue from "@/app/pageComponents/serviceDetail/ServiceValue";
+import { unstable_noStore } from "next/cache";
 
-export default async function ServiceDetailPage() {
+export default async function ServiceDetailPage({ params }: any) {
+  unstable_noStore();
+  const { service_detail } = params;
+  const { data: serviceDetailData, error: serviceDetailError } =
+    await fetchServerData(`/service/${service_detail}`);
+
   return (
     <div>
       <PageHeader
@@ -20,9 +26,9 @@ export default async function ServiceDetailPage() {
         }}
       />
 
-      <ServiceIntro />
+      <ServiceIntro service_detail={serviceDetailData} />
       <ServiceValue />
-      <ServiceScope />
+      <ServiceScope service_detail={serviceDetailData} />
       <ServicePlatforms />
       <ServiceDevelopmentSteps />
       <CallToAction />

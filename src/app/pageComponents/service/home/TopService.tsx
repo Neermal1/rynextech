@@ -6,7 +6,7 @@ import {
 import PrimaryButton from "@/app/components/Button/PrimaryButton";
 import Card from "@/app/components/Card/Card";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
-import { flexColLayout, service_data } from "@/app/constants/constants";
+import { flexColLayout } from "@/app/constants/constants";
 import { IService } from "@/app/interface/interface";
 import { motion } from "framer-motion";
 
@@ -30,11 +30,11 @@ const TopService = ({ service_data: service }: IService) => {
           variants={parent_stagger_animation}
           className="grid lg:grid-cols-3 gap-[60px]"
         >
-          {service_data?.map((service, index: any) => {
+          {service?.map((service, index: any) => {
             const {
               name,
               description,
-              product_category_id,
+
               image_link,
               slug,
               id,
@@ -51,7 +51,6 @@ const TopService = ({ service_data: service }: IService) => {
                   data={{
                     name,
                     description,
-                    product_category_id,
                     image_link,
                     slug,
                   }}

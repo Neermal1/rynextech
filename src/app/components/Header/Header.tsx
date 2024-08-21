@@ -32,19 +32,11 @@ const Header = ({ header_data }: IHeader) => {
           <div className="bg-white   drop-shadow-md text-black ">
             <div className="layout   lg:px-4  px-6 lg:py-0 py-4 lg:items-stretch items-center flex lg:gap-6 gap-20  justify-between ">
               <Link href="/" className="flex items-center my-4">
-                {/* <img
+                <img
                   src={companyProfile?.logo_link}
                   alt=""
-                  className="lg:w-[10vh] w-[6vh] object-contain "
-                /> */}
-
-                <div>
-                  <img
-                    src="/staticImages/logo.jpg"
-                    alt=""
-                    className="lg:w-[14vh] w-[10vh] object-contain"
-                  />
-                </div>
+                  className="lg:w-[14vh] w-[10vh] object-contain"
+                />
               </Link>
               <div className="lg:flex gap-6 hidden ">
                 <HeaderMenu headerItems={headerItems} />

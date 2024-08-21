@@ -1,7 +1,7 @@
 // svg images
 import branding from "../../../public/staticImages/branding.svg";
 
-export const baseUrl = "https://admin.milkconepal.com/api";
+export const baseUrl = "https://check.terracecafe.com.np/api";
 
 export const random_text =
   " At Rynex Solutions, we are dedicated to revolutionizing the IT landscape with innovative, reliable, and cutting-edge technologysolutions. As a premier IT company, we specialize in deliveringcomprehensive services that drive efficiency, security, and growth for businesses of all sizes.";

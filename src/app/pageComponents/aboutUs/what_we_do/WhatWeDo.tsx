@@ -1,10 +1,9 @@
 "use client";
 import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
-import { ourWork } from "@/app/constants/constants";
-import Image from "next/image";
+import { IWhatWeDo } from "@/app/interface/interface";
 import { motion } from "framer-motion";
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ what_we_do }: IWhatWeDo) => {
   return (
     <div className="layout component-padding">
       <div className="flex flex-col gap-20">
@@ -28,7 +27,7 @@ const WhatWeDo = () => {
 
         <div className="">
           <div className="grid lg:grid-cols-4">
-            {ourWork?.map((data, index) => {
+            {what_we_do?.map((data, index) => {
               return (
                 <motion.div
                   key={index}
@@ -46,11 +45,7 @@ const WhatWeDo = () => {
                   }}
                 >
                   <div className="flex flex-col items-center justify-center gap-6 text-center p-6 group-hover:bg-secondary rounded-[8px] m-6">
-                    <Image
-                      src={data?.image_link}
-                      alt=""
-                      className="h-[120px] "
-                    />
+                    <img src={data?.image_link} alt="" className="h-[120px] " />
                     <div className=" text-black">
                       <div className="text-[20px] font-semibold text-center group-hover:text-white  text-black">
                         {data?.title}

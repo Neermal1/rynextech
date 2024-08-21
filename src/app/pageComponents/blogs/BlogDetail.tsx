@@ -9,20 +9,20 @@ const BlogDetail = ({ blog_detail }: IBlogDetail) => {
         <div className="lg:col-span-5 flex flex-col gap-6">
           <div className="flex flex-col gap-6">
             <div className="text-[30px] text-primary font-semibold mb-3">
-              {blog_detail?.detail?.title}
+              {blog_detail?.details?.title}
             </div>
             <div>
               <img
-                src={blog_detail?.detail?.image_link}
+                src={blog_detail?.details?.image_link}
                 alt=""
                 className="w-[100%] lg:h-[60vh] h-[40vh] object-cover"
               />
             </div>
-            {blog_detail?.detail?.description && (
+            {blog_detail?.details?.description && (
               <div
                 className="leading-[28px]"
                 dangerouslySetInnerHTML={{
-                  __html: blog_detail?.detail?.description,
+                  __html: blog_detail?.details?.description,
                 }}
               />
             )}

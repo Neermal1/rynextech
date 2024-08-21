@@ -22,12 +22,12 @@ export default async function BlogDetailPage({ params }: any) {
 
   const { blogDetail } = params;
   const { data: blogs, error: blogError } = await fetchServerData(
-    `/blogs/${blogDetail}`
+    `/blog/${blogDetail}`
   );
 
   if (blogError) return <div>Error.Sorry Something went wrong</div>;
 
-  if (blogs?.detail === null) {
+  if (blogs?.details === null) {
     notFound();
   }
 
@@ -36,8 +36,8 @@ export default async function BlogDetailPage({ params }: any) {
       <div>
         <PageHeader
           data={{
-            image: `${blogs?.detail?.image_link}`,
-            title: `${blogs?.detail?.title}`
+            image: `${blogs?.details?.image_link}`,
+            title: `${blogs?.details?.title}`
               .replace(/-/g, " ")
               .replace(/(^|\s)\S/g, function (t: any) {
                 return t.toUpperCase();

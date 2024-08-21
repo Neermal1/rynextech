@@ -24,7 +24,7 @@ const SoftwareLifeCycle = () => {
           whileInView="whileInView"
         >
           <img
-            src="https://www.intellectsoft.net/assets/730044a8/img/solution-lifecycle/solution-lifecycle.svg"
+            src="https://www.intellectsoft.net/assets/4fe29ef8/img/solution-lifecycle/solution-lifecycle.svg"
             alt=""
           />
         </motion.div>

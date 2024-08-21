@@ -17,7 +17,9 @@ const Card = ({ data }: ICard) => {
           </div>
           <div className="flex flex-col gap-10 p-6">
             <div className="flex flex-col gap-4">
-              <div className="text-[25px] font-bold">{data?.name}</div>
+              <div className="text-[25px] font-bold lg:h-[7vh]">
+                {data?.name}
+              </div>
               <div
                 className="line-clamp-2 "
                 dangerouslySetInnerHTML={{

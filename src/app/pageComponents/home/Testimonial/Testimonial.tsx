@@ -53,9 +53,13 @@ export default function Testimonials({ data }: ITestimonial) {
                       />
                     </div>
                     <div className="mt-4">
-                      <p className="text-gray-700 lg:text-lg mb-2 lg:mb-4 italic h-[15vh] overflow-y-scroll">
-                        &quot;{testimonial?.description}&quot;
-                      </p>
+                      <p
+                        className="text-gray-700 lg:text-lg mb-2 lg:mb-4 italic h-[15vh] overflow-y-scroll"
+                        dangerouslySetInnerHTML={{
+                          __html: testimonial?.message,
+                        }}
+                      />
+
                       <div className="">
                         <p className="text-gray-900 font-medium text-lg lg:text-xl mb-1">
                           {testimonial?.name}

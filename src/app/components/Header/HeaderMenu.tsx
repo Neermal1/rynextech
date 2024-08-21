@@ -28,7 +28,7 @@ const HeaderMenu = ({ headerItems }: IHeaderMenu) => {
             <div className="  layout py-6 lg:px-4 px-6 ">
               <div className="flex flex-col items-start lg:justify-center gap-2 lg:mx-[100px]">
                 <div className=" lg:w-[100%]  grid lg:grid-cols-8 lg:gap-10 gap-5">
-                  <div className="lg:col-span-8  grid lg:grid-cols-4 gap-6">
+                  <div className="lg:col-span-8  grid lg:grid-cols-3 gap-6">
                     {data?.subMenu?.map((data, index: number) => {
                       return (
                         <Link

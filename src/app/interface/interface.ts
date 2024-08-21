@@ -72,7 +72,6 @@ export interface IButton {
 export interface ICard {
   data: {
     name: string;
-    product_category_id: string;
     image_link: string;
     description: string;
     slug: string;
@@ -82,13 +81,25 @@ export interface ICard {
 export interface IService {
   service_data: IServiceData[];
 }
-interface IServiceData {
-  name: string;
-  product_category_id: string;
-  image_link: string;
-  description: string;
-  slug: string;
+export interface IServiceDetail {
+  service_detail: {
+    details: IServiceData;
+  };
+}
+export interface IServiceData {
   id: number;
+  name: string;
+  slug: string;
+  description: string;
+  importance: string;
+  scope_description: string;
+  scope: any;
+  why_us: string;
+  steps_description: string;
+  steps: string;
+  image_link: string;
+  scope_image_link: string;
+  steps_image_link: string;
 }
 export interface IComponentHeader {
   data: {
@@ -110,7 +121,7 @@ export interface ITestimonial {
 interface ITestimonialDetail {
   name: string;
   image_link: string;
-  description: string;
+  message: string;
 }
 
 export interface IPageHeader {
@@ -151,7 +162,7 @@ export interface IBlogs {
 
 export interface IBlogDetail {
   blog_detail: {
-    detail: IBlogData;
+    details: IBlogData;
     others: IBlogData[];
   };
 }
@@ -174,5 +185,54 @@ export interface IServiceCard {
     title: string;
     desc: string;
     count?: any;
+  };
+}
+
+export interface ITopFeature {
+  feature_data: ITopFeatureData[];
+}
+interface ITopFeatureData {
+  id: number;
+  title: string;
+  description: string;
+}
+
+export interface ITechnology {
+  tech_data: ITechnologyData[];
+}
+interface ITechnologyData {
+  id: number;
+  name: string;
+  image_link: string;
+}
+
+export interface IClient {
+  client_data: IClientData[];
+}
+interface IClientData {
+  id: number;
+  name: string;
+  image_link: string;
+}
+
+export interface IWhatWeDo {
+  what_we_do: IWhatWeDoData[];
+}
+interface IWhatWeDoData {
+  id: number;
+  title: string;
+  image_link: string;
+}
+
+export interface IWhyChooseUs {
+  why_choose_us: {
+    id: number;
+    title: string;
+    image_link: string;
+    position: string;
+    profile_image_link: string;
+    signature_link: string;
+    description: string;
+    name: string;
   };
 }
