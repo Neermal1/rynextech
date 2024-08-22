@@ -19,14 +19,10 @@ const TopClients = ({ client_data }: IClient) => {
         </div>
         <div className="lg:col-span-4 text-gray-600 flex flex-col gap-6">
           <div>
-            It provides an opportunity to acknowledge their contributions,
-            showcase the benefits of these relationships, and demonstrate how
-            these collaborations have driven mutual growth and success.
+            At the heart of our success are the exceptional clients and partners who have trusted us with their visions. These collaborations have not only fueled our growth but have also led to transformative outcomes in various industries. We take immense pride in the relationships we've built, which are rooted in mutual respect, shared goals, and a commitment to excellence.
           </div>
           <div>
-            It provides an opportunity to acknowledge their contributions,
-            showcase the benefits of these relationships, and demonstrate how
-            these collaborations have driven mutual growth and success.
+            Each of our clients and partners brings unique strengths to the table, and together, we've achieved remarkable milestones. Join us in celebrating the power of collaboration as we continue to push boundaries and create lasting impact.
           </div>
         </div>
       </div>

@@ -72,7 +72,6 @@ export default async function indexPage() {
       />
       <TopFeature feature_data={topFeature} />
       <WhyChooseUs why_choose_us={whyChooseUsData} />
-      <SoftwareLifeCycle />
       <TopService service_data={service} />
       <Technology tech_data={techData} />
       <Introduction data={companyProfile} />

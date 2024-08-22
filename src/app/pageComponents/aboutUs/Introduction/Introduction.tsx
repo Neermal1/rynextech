@@ -42,7 +42,7 @@ const Introduction = ({ data: company_profile }: ICompanyProfileData) => {
         >
           <div>
             <div className="  relative">
-              <div className="h-[50vh] bg-hover w-full object-cover z-0 rounded-[8px]"></div>
+              <div className="h-[50vh] bg-secondary w-full object-cover z-0 rounded-[8px]"></div>
 
               <div className="absolute lg:top-[60px] top-[50px] lg:right-[-80px] right-[-10px] lg:bottom-[-50px]  w-full z-40">
                 <div className="bg-white   p-1 rounded-[8px] drop-shadow-md flex items-center justify-center">
