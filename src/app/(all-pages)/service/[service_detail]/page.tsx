@@ -1,12 +1,42 @@
-import CallToAction from "@/app/components/CallToAction/CallToAction";
 import PageHeader from "@/app/components/pageHeader/components/PageHeader";
 import { fetchServerData } from "@/app/helperFunctions/fetchServerData";
 import ServiceDevelopmentSteps from "@/app/pageComponents/serviceDetail/ServiceDevelopmentSteps";
 import ServiceIntro from "@/app/pageComponents/serviceDetail/ServiceIntro";
-import ServicePlatforms from "@/app/pageComponents/serviceDetail/ServicePlatforms";
 import ServiceScope from "@/app/pageComponents/serviceDetail/ServiceScope";
 import ServiceValue from "@/app/pageComponents/serviceDetail/ServiceValue";
+import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const slug = params?.service_detail;
+  const heading = slug
+    .replace(/-/g, " ")
+    .replace(/(^|\s)\S/g, function (t: any) {
+      return t.toUpperCase();
+    });
+
+  const { data: serviceDetailData } = await fetchServerData(`/service/${slug}`);
+
+  return {
+    title: `Rynex Solutions-${slug ? heading : "Error"}`,
+    keywords: "best website portfolio tech IT",
+
+    openGraph: {
+      type: "website",
+      url: "https://example.com/about",
+      title: `Rynex Solutions-${slug ? heading : "Error"}`,
+
+      images: [
+        {
+          url: serviceDetailData?.details?.image_link,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
+}
 
 export default async function ServiceDetailPage({ params }: any) {
   unstable_noStore();
@@ -14,24 +44,25 @@ export default async function ServiceDetailPage({ params }: any) {
   const { data: serviceDetailData, error: serviceDetailError } =
     await fetchServerData(`/service/${service_detail}`);
 
+  if (serviceDetailError) return <div>Sorry Something went wrong</div>;
+
+  if (!serviceDetailData?.details) return notFound();
   return (
     <div>
       <PageHeader
         data={{
-          image:
-            "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041855.jpg?t=st=1723031328~exp=1723034928~hmac=2995b0b931a7e4a64d1fd78a3290dc799e43bb36688951dcec4828af6460b63d&w=1380",
-          title: "Our Service",
-          subDetail:
-            "We help companies leverage technological capabilities by developing cutting-edge mobile applications with excellent UX (User Experience) across multiple platforms including Android and iOS and mobile devices.",
+          image: serviceDetailData?.details?.image_link,
+          title: serviceDetailData?.details?.name,
+          subDetail: "",
         }}
       />
 
       <ServiceIntro service_detail={serviceDetailData} />
-      <ServiceValue />
+      <ServiceValue service_detail={serviceDetailData} />
       <ServiceScope service_detail={serviceDetailData} />
-      <ServicePlatforms />
-      <ServiceDevelopmentSteps />
-      <CallToAction />
+      {/* <ServicePlatforms /> */}
+      <ServiceDevelopmentSteps service_detail={serviceDetailData} />
+      {/* <CallToAction/> */}
     </div>
   );
 }

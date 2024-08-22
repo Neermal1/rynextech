@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Rynex Solutions-Contact Us",
-    keywords: "best export  products nepal kathmandu bhaktapur",
+    keywords: "best website portfolio tech IT",
     openGraph: {
       type: "website",
       title: `Rynex Solutions-Contact Us`,

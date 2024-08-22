@@ -8,12 +8,24 @@ import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { blogDetail } = params;
+  const { data: blogs } = await fetchServerData(`/blog/${blogDetail}`);
   return {
-    title:
-      "Rynex Solution-" +
-      blogDetail.replace(/-/g, " ").replace(/(^|\s)\S/g, function (t: any) {
-        return t.toUpperCase();
-      }),
+    title: blogs?.details?.title,
+    keywords: "best website portfolio tech IT",
+
+    openGraph: {
+      type: "website",
+      url: "https://example.com/about",
+      title: `Rynex Solutions-${blogs?.details?.title}`,
+
+      images: [
+        {
+          url: blogs?.details?.image_link,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 

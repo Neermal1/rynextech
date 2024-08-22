@@ -17,12 +17,12 @@ const PageHeader = ({ data }: IPageHeader) => {
         initial="initial"
         animate="animate"
         variants={pageHeaderVariants}
-        className="relative flex flex-col items-center justify-center layout component-padding"
+        className="relative flex flex-col items-center justify-center layout component-padding lg:w-[60%] text-center "
       >
         <div className="lg:text-[45px] text-center text-[35px] font-medium">
           {data?.title}
         </div>
-        <div className="lg:w-[60%] text-center ">
+        <div className="">
           <div className="">{data?.subDetail}</div>
         </div>
       </motion.div>

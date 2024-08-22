@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     });
 
   return {
-    title: `MilkCo Nepal-${slug ? heading : "Error"}`,
-    keywords: "best export  products nepal kathmandu bhaktapur",
+    title: `Rynex Solutions-${slug ? heading : "Error"}`,
+    keywords: "best website portfolio tech IT",
 
     openGraph: {
       type: "website",
       url: "https://example.com/about",
-      title: `MilkCo Nepal-${slug ? heading : "Error"}`,
+      title: `Rynex Solutions-${slug ? heading : "Error"}`,
 
       images: [
         {

@@ -17,9 +17,11 @@ const ServiceScope = ({ service_detail }: IServiceDetail) => {
           variants={intro_photo_animation}
           initial="initial"
           whileInView="whileInView"
-          className=""
+          className="sticky top-[140px]"
         >
-          <img src={scope_image_link} alt="" />
+          <div>
+            <img src={scope_image_link} alt="" />
+          </div>
         </motion.div>
         <div className="flex flex-col gap-8">
           <motion.div
@@ -28,7 +30,9 @@ const ServiceScope = ({ service_detail }: IServiceDetail) => {
             whileInView="whileInView"
             className="lg:text-[30px] text-[20px] font-medium"
           >
-            <TextSplitColor text=" Our scope of mobile app development services" />
+            <TextSplitColor
+              text={`Our scope of ${service_detail?.details?.name} services`}
+            />
           </motion.div>
           <div
             className="text-neutral"

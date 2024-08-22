@@ -7,12 +7,12 @@ import { unstable_noStore } from "next/cache";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Rynex Solution-Gallery",
-    keywords: "best export  products nepal kathmandu bhaktapur",
+    keywords: "best website portfolio tech IT",
 
     openGraph: {
       type: "website",
       url: "https://example.com/about",
-      title: `MilkCo Nepal-Gallery`,
+      title: `Rynex Solutions-Gallery`,
 
       images: [
         {

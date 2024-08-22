@@ -91,7 +91,7 @@ export interface IServiceData {
   name: string;
   slug: string;
   description: string;
-  importance: string;
+  importance: any;
   scope_description: string;
   scope: any;
   why_us: string;

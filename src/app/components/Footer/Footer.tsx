@@ -49,7 +49,7 @@ const Footer = ({ footer_data }: IFooter) => {
       ],
     },
     {
-      title: "Products",
+      title: "Services",
       desc: updated_category,
     },
   ];

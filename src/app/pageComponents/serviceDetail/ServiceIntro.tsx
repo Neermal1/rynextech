@@ -3,22 +3,27 @@ import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import { IServiceDetail } from "@/app/interface/interface";
 
 const ServiceIntro = ({ service_detail }: IServiceDetail) => {
-  const { description, name } = service_detail && service_detail?.details;
   return (
     <div className="layout component-padding">
-      <div className="flex flex-col gap-8">
-        <ComponentHeader
-          data={{
-            heading: name,
-            subheading: "",
-          }}
-        />
-        <div
-          className="text-neutral text-[18px] lg:w-[60%]"
-          dangerouslySetInnerHTML={{
-            __html: description,
-          }}
-        />
+      <div className="grid lg:grid-cols-8">
+        <div className="lg:col-span-5">
+          <div className="flex flex-col gap-8">
+            <ComponentHeader
+              data={{
+                heading:
+                  service_detail?.details && service_detail?.details?.name,
+                subheading: "",
+              }}
+            />
+            <div
+              className="text-neutral text-[18px] "
+              dangerouslySetInnerHTML={{
+                __html: service_detail?.details?.description,
+              }}
+            />
+          </div>
+        </div>
+        <div className="lg:col-span-3"></div>
       </div>
     </div>
   );
