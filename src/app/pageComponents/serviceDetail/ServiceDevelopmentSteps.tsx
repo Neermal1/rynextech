@@ -39,9 +39,9 @@ const ServiceDevelopmentSteps = ({ service_detail }: IServiceDetail) => {
                           },
                         }}
                         key={index}
-                        className="grid lg:grid-cols-6"
+                        className="flex items-center gap-4"
                       >
-                        <div className="h-[4vh] w-[4vh] bg-hover rounded-full flex items-center justify-center  lg:col-span-1">
+                        <div className="h-[4vh] w-[4vh] rounded-full bg-hover p-2 flex items-center justify-center lg:translate-y-[1px] translate-y-[-28px]  lg:col-span-1">
                           <FaArrowDownLong className="text-white" />
                         </div>
                         <div className="lg:col-span-5">{data}</div>

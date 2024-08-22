@@ -1,9 +1,11 @@
+import CallToAction from "@/app/components/CallToAction/CallToAction";
 import PageHeader from "@/app/components/pageHeader/components/PageHeader";
 import { fetchServerData } from "@/app/helperFunctions/fetchServerData";
 import ServiceDevelopmentSteps from "@/app/pageComponents/serviceDetail/ServiceDevelopmentSteps";
 import ServiceIntro from "@/app/pageComponents/serviceDetail/ServiceIntro";
 import ServiceScope from "@/app/pageComponents/serviceDetail/ServiceScope";
 import ServiceValue from "@/app/pageComponents/serviceDetail/ServiceValue";
+import WhyOurService from "@/app/pageComponents/serviceDetail/WhyOurService";
 import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
 import { notFound } from "next/navigation";
@@ -59,10 +61,10 @@ export default async function ServiceDetailPage({ params }: any) {
 
       <ServiceIntro service_detail={serviceDetailData} />
       <ServiceValue service_detail={serviceDetailData} />
-      <ServiceScope service_detail={serviceDetailData} />
-      {/* <ServicePlatforms /> */}
       <ServiceDevelopmentSteps service_detail={serviceDetailData} />
-      {/* <CallToAction/> */}
+      <ServiceScope service_detail={serviceDetailData} />
+      <WhyOurService service_detail={serviceDetailData} />
+      <CallToAction />
     </div>
   );
 }

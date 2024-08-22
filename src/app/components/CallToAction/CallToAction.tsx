@@ -8,18 +8,27 @@ import {
 } from "@/app/animation/animation_variants/animation_variants";
 const CallToAction = () => {
   return (
-    <div className="bg-lightAccent">
-      <div className="layout component-padding">
-        <div className="grid lg:grid-cols-2">
+    <div
+      className="relative h-[50vh] bg-fixed flex items-center justify-center"
+      style={{
+        backgroundImage: `url(../staticImages/sliderbanner.png)`,
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="absolute top-0 left-0 h-full object-contain w-full  bg-[black] opacity-60"></div>
+
+      <div className=" relative text-white  layout component-padding">
+        <div className="">
           <div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 items-center justify-center">
               <motion.div
                 initial="initial"
                 whileInView="whileInView"
                 variants={top_animation}
+                className="flex flex-col items-center justify-center"
               >
-                <div>BUSINESS AGENCY</div>
-                <div className="lg:text-[50px] text-[35px] font-bold text-black">
+                <div className="text-center">BUSINESS AGENCY</div>
+                <div className="lg:text-[50px] text-[25px] font-bold text-center ">
                   We make top creative solutions for brands
                 </div>
               </motion.div>
@@ -28,7 +37,7 @@ const CallToAction = () => {
               </div>
             </div>
           </div>
-          <motion.div
+          {/* <motion.div
             initial="initial"
             whileInView="whileInView"
             variants={intro_photo_animation}
@@ -38,7 +47,7 @@ const CallToAction = () => {
               src="https://www.pngmart.com/files/11/Information-Technology-PNG-Pic.png"
               alt=""
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>
