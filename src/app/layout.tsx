@@ -15,7 +15,7 @@ const public_sans = Public_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   const { data: companyProfile } = await fetchServerData("/company-profile");
   return {
-    title: "Rynex Solutions",
+    title: "Rynex Tech",
     description: companyProfile?.description,
     icons: {
       icon: companyProfile?.favicon_link,

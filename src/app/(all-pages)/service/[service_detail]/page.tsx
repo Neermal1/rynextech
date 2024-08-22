@@ -61,8 +61,8 @@ export default async function ServiceDetailPage({ params }: any) {
 
       <ServiceIntro service_detail={serviceDetailData} />
       <ServiceValue service_detail={serviceDetailData} />
-      <ServiceDevelopmentSteps service_detail={serviceDetailData} />
       <ServiceScope service_detail={serviceDetailData} />
+      <ServiceDevelopmentSteps service_detail={serviceDetailData} />
       <WhyOurService service_detail={serviceDetailData} />
       <CallToAction />
     </div>
