@@ -19,10 +19,18 @@ const TopClients = ({ client_data }: IClient) => {
         </div>
         <div className="lg:col-span-4 text-gray-600 flex flex-col gap-6">
           <div>
-            At the heart of our success are the exceptional clients and partners who have trusted us with their visions. These collaborations have not only fueled our growth but have also led to transformative outcomes in various industries. We take immense pride in the relationships we've built, which are rooted in mutual respect, shared goals, and a commitment to excellence.
+            At the heart of our success are the exceptional clients and partners
+            who have trusted us with their visions. These collaborations have
+            not only fueled our growth but have also led to transformative
+            outcomes in various industries. We take immense pride in the
+            relationships {"we've"} built, which are rooted in mutual respect,
+            shared goals, and a commitment to excellence.
           </div>
           <div>
-            Each of our clients and partners brings unique strengths to the table, and together, we've achieved remarkable milestones. Join us in celebrating the power of collaboration as we continue to push boundaries and create lasting impact.
+            Each of our clients and partners brings unique strengths to the
+            table, and together, {"we've"} achieved remarkable milestones. Join
+            us in celebrating the power of collaboration as we continue to push
+            boundaries and create lasting impact.
           </div>
         </div>
       </div>
