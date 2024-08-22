@@ -197,11 +197,21 @@ const Footer = ({ footer_data }: IFooter) => {
       <div className="border-t-[1px] border-t-[gray]">
         <div className="layout px-6 py-6 text-black flex lg:flex-row flex-col  gap-4 items-center lg:justify-between justify-center">
           <div className="lg:text-start text-center">
-            Copyright © <span className="">export.com.</span> All Rights
-            Reserved.
+            Copyright ©{" "}
+            <a href="#" className="text-secondary">
+              rynexsolution.com.
+            </a>{" "}
+            All Rights Reserved.
           </div>
           <div>
-            Designed by <span className="">Next Aussie Tech.</span>{" "}
+            Designed by{" "}
+            <a
+              className="text-secondary"
+              href="https://nextaussietech.com/"
+              target="__blank"
+            >
+              Next Aussie Tech.
+            </a>{" "}
           </div>
         </div>
       </div>

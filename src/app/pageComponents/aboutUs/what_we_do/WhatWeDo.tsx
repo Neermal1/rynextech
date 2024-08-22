@@ -18,10 +18,6 @@ const WhatWeDo = ({ what_we_do }: IWhatWeDo) => {
                 }}
               />
             </div>
-            <div>
-              <div className="text-[16px] font-bold">Peter Bowman </div>
-              <div>Creative Director</div>
-            </div>
           </div>
         </div>
 

@@ -30,7 +30,12 @@ const StaggeredTextAnimation = ({ text }: IStaggeredTextAnimation) => {
           variants={textVariants}
           style={{ display: "inline-block", marginRight: "5px" }}
         >
-          <div className="">{word}</div>
+          <div
+            className=""
+            dangerouslySetInnerHTML={{
+              __html: word,
+            }}
+          />
         </motion.span>
       ))}
     </div>

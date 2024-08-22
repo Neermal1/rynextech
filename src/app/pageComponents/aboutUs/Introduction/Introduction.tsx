@@ -1,14 +1,15 @@
 "use client";
-import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
-import CompanyInfo from "../what_we_do/CompanyInfo";
+import { intro_photo_animation } from "@/app/animation/animation_variants/animation_variants";
 import StaggeredTextAnimation from "@/app/animation/reusable_animation/staggered_text_animation/StaggeredTextAnimation";
+import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import { motion } from "framer-motion";
+import CompanyInfo from "../what_we_do/CompanyInfo";
 import {
-  intro_photo_animation,
-  top_animation,
-} from "@/app/animation/animation_variants/animation_variants";
+  ICompanyProfile,
+  ICompanyProfileData,
+} from "@/app/interface/interface";
 
-const Introduction = () => {
+const Introduction = ({ data: company_profile }: ICompanyProfileData) => {
   return (
     <div className="layout component-padding">
       <div className="grid lg:grid-cols-8 gap-10">
@@ -27,11 +28,7 @@ const Introduction = () => {
             <div className="flex flex-col gap-6 lg:w-[80%]">
               <div>
                 <StaggeredTextAnimation
-                  text=" At Rynex Solutions, we are dedicated to revolutionizing the IT
-                landscape with innovative, reliable, and cutting-edge technology
-                solutions. As a premier IT company, we specialize in delivering
-                comprehensive services that drive efficiency, security, and
-                growth for businesses of all sizes."
+                  text={`${company_profile?.introduction}`}
                 />
               </div>
             </div>
@@ -61,7 +58,7 @@ const Introduction = () => {
         </motion.div>
       </div>
       <div>
-        <CompanyInfo />
+        <CompanyInfo data={company_profile} />
       </div>
     </div>
   );

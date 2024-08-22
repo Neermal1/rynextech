@@ -75,7 +75,7 @@ export default async function indexPage() {
       <SoftwareLifeCycle />
       <TopService service_data={service} />
       <Technology tech_data={techData} />
-      <Introduction />
+      <Introduction data={companyProfile} />
       <TopClients client_data={topClients} />
       <WhatWeDo what_we_do={whatWeDo} />
       <CallToAction />
