@@ -9,8 +9,12 @@ import ComponentHeader from "@/app/components/componentHeader/ComponentHeader";
 import { flexColLayout } from "@/app/constants/constants";
 import { IService } from "@/app/interface/interface";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const TopService = ({ service_data: service }: IService) => {
+  const pathname = usePathname();
+
   return (
     <div className="layout component-padding">
       <div className={`${flexColLayout} `}>
@@ -59,9 +63,13 @@ const TopService = ({ service_data: service }: IService) => {
             );
           })}
         </motion.div>
-        <div className="flex items-center justify-center">
-          <PrimaryButton>See More Services</PrimaryButton>
-        </div>
+        {pathname !== "/service" && (
+          <div className="flex items-center justify-center">
+            <Link href="/service">
+              <PrimaryButton>See More Services</PrimaryButton>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
