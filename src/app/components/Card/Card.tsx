@@ -7,7 +7,7 @@ const Card = ({ data }: ICard) => {
   return (
     <>
       <div className="bg-white  drop-shadow-lg rounded-md group">
-        <Link href={`/product/${data?.slug}`} className="flex flex-col gap-6">
+        <Link href={`/service/${data?.slug}`} className="flex flex-col gap-6">
           <div className="bg-accent p-6">
             <img
               src={data?.image_link}
