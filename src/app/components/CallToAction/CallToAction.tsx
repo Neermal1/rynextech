@@ -6,6 +6,7 @@ import {
   intro_photo_animation,
   top_animation,
 } from "@/app/animation/animation_variants/animation_variants";
+import Link from "next/link";
 const CallToAction = () => {
   return (
     <div
@@ -32,9 +33,9 @@ const CallToAction = () => {
                   We make top creative solutions for brands
                 </div>
               </motion.div>
-              <div>
+              <Link href="/service">
                 <PrimaryButton>Our Services</PrimaryButton>
-              </div>
+              </Link>
             </div>
           </div>
           {/* <motion.div
