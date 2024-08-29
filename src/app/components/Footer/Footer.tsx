@@ -63,7 +63,7 @@ const Footer = ({ footer_data }: IFooter) => {
               <img
                 src={companyProfile?.logo_link}
                 alt=""
-                className="lg:w-[14vh] w-[10vh] object-contain"
+                className="lg:w-[35vh] w-[35vh] object-contain"
               />
             </div>
             <div
