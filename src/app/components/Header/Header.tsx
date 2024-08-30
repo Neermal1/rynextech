@@ -35,7 +35,7 @@ const Header = ({ header_data }: IHeader) => {
                 <img
                   src={companyProfile?.logo_link}
                   alt=""
-                  className="lg:w-[25vh] w-[25vh]"
+                  className="lg:w-[35vh] w-[25vh]"
                 />
               </Link>
               <div className="lg:flex gap-6 hidden ">
