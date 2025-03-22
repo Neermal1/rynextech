@@ -1,4 +1,5 @@
 import { unstable_noStore } from "next/cache";
+import dynamic from "next/dynamic";
 import CallToAction from "./components/CallToAction/CallToAction";
 import TopClients from "./components/clients/TopClients";
 import Technology from "./components/Technology/Technology";
@@ -7,47 +8,50 @@ import Introduction from "./pageComponents/aboutUs/Introduction/Introduction";
 import WhatWeDo from "./pageComponents/aboutUs/what_we_do/WhatWeDo";
 import BlogList from "./pageComponents/home/blogs/BlogList";
 import TopFeature from "./pageComponents/home/Features/TopFeature";
-import SoftwareLifeCycle from "./pageComponents/home/lifeCycle/SoftwareLifeCycle";
-import Slider from "./pageComponents/home/Slider/Slider";
 import Testimonials from "./pageComponents/home/Testimonial/Testimonial";
 import TopService from "./pageComponents/service/home/TopService";
 import WhyChooseUs from "./pageComponents/aboutUs/why_choose_us/WhyChooseUs";
 
+// Import SoftwareLifeCycle with SSR disabled
+const SoftwareLifeCycle = dynamic(
+  () => import("./pageComponents/home/lifeCycle/SoftwareLifeCycle"),
+  { ssr: false }
+);
+
+// Import Slider with SSR disabled
+const Slider = dynamic(() => import("./pageComponents/home/Slider/Slider"), {
+  ssr: false,
+});
+
 export default async function indexPage() {
   unstable_noStore();
-  const { data: sliderData, error: sliderError } = await fetchServerData(
-    "/home/sliders"
-  );
 
-  const { data: companyProfile, error: companyProfileError } =
-    await fetchServerData("/company-profile");
+  // Fetch data concurrently
+  const [
+    { data: sliderData, error: sliderError },
+    { data: companyProfile, error: companyProfileError },
+    { data: service, error: serviceError },
+    { data: whyChooseUsData, error: whyChooseUsError },
+    { data: topFeature, error: featureError },
+    { data: techData, error: techError },
+    { data: topClients, error: clientError },
+    { data: whatWeDo, error: whatWeDoError },
+    { data: testimonialData, error: testimonialError },
+    { data: blogs, error: newsError },
+  ] = await Promise.all([
+    fetchServerData("/home/sliders"),
+    fetchServerData("/company-profile"),
+    fetchServerData("/home/services"),
+    fetchServerData("/why-us"),
+    fetchServerData("/home/corporate-services"),
+    fetchServerData("/home/technologies"),
+    fetchServerData("/home/clients"),
+    fetchServerData("/home/what-we-do"),
+    fetchServerData("/home/testimonials"),
+    fetchServerData("/home/blogs"),
+  ]);
 
-  const { data: service, error: serviceError } = await fetchServerData(
-    "/home/services"
-  );
-  const { data: whyChooseUsData, error: whyChooseUsError } =
-    await fetchServerData("/why-us");
-
-  const { data: topFeature, error: featureError } = await fetchServerData(
-    "/home/corporate-services"
-  );
-  const { data: techData, error: techError } = await fetchServerData(
-    "/home/technologies"
-  );
-  const { data: topClients, error: clientError } = await fetchServerData(
-    "/home/clients"
-  );
-  const { data: whatWeDo, error: whatWeDoError } = await fetchServerData(
-    "/home/what-we-do"
-  );
-
-  const { data: testimonialData, error: testimonialError } =
-    await fetchServerData("/home/testimonials");
-
-  const { data: blogs, error: newsError } = await fetchServerData(
-    "/home/blogs"
-  );
-
+  // Handle errors
   if (
     sliderError &&
     companyProfileError &&
@@ -59,27 +63,54 @@ export default async function indexPage() {
     whatWeDoError &&
     newsError &&
     testimonialError
-  )
-    return "Sorry Something went wrong!!";
+  ) {
+    return <p className="text-center text-red-500">Sorry, something went wrong!!</p>;
+  }
 
   return (
     <div>
-      <Slider
-        slider_data={{
-          slider_info: sliderData,
-          companyProfile,
-        }}
-      />
-      <TopFeature feature_data={topFeature} />
-      <WhyChooseUs why_choose_us={whyChooseUsData} />
-      <TopService service_data={service} />
-      <Technology tech_data={techData} />
-      <Introduction data={companyProfile} />
-      <TopClients client_data={topClients} />
-      <WhatWeDo what_we_do={whatWeDo} />
+      {/* Hero Slider */}
+      {sliderData && companyProfile && (
+        <Slider
+          slider_data={{
+            slider_info: sliderData,
+            companyProfile,
+          }}
+        />
+      )}
+
+      {/* Top Features */}
+      {topFeature && <TopFeature feature_data={topFeature} />}
+
+      {/* Why Choose Us */}
+      {whyChooseUsData && <WhyChooseUs why_choose_us={whyChooseUsData} />}
+
+      {/* Services */}
+      {service && <TopService service_data={service} />}
+
+      {/* Technology Stack */}
+      {techData && <Technology tech_data={techData} />}
+
+      {/* Company Introduction */}
+      {companyProfile && <Introduction data={companyProfile} />}
+
+      {/* Top Clients */}
+      {topClients && <TopClients client_data={topClients} />}
+
+      {/* What We Do */}
+      {whatWeDo && <WhatWeDo what_we_do={whatWeDo} />}
+
+      {/* Software Development Life Cycle Section */}
+      <SoftwareLifeCycle />
+
+      {/* Call To Action */}
       <CallToAction />
-      <Testimonials data={testimonialData} />
-      <BlogList blog_data={blogs} />
+
+      {/* Testimonials */}
+      {testimonialData && <Testimonials data={testimonialData} />}
+
+      {/* Blogs */}
+      {blogs && <BlogList blog_data={blogs} />}
     </div>
   );
 }
